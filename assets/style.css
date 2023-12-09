@@ -144,3 +144,28 @@ body {
   width: 100%;
   max-width: 400px;
 }
+
+#uploadForm {
+  padding: 15px;
+  background: #f2f4f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#uploadForm button {
+  background: #181818;
+  color: #fee;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid #222;
+  cursor: pointer;
+}
+
+#fileList li {
+  padding: 5px 10px;
+  margin-left: 20px;
+}

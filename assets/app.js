@@ -2,22 +2,25 @@
 (function() {
   const attachmentBtn = document.querySelectorAll('.attachment-btn');
   const modal = document.querySelector('.modal');
+  const form = document.getElementById("uploadForm");
   let targetCard;
+
+  // Open modal by button click
   attachmentBtn.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      targetCard = e.target.parentElement.parentElement.querySelector('.attachment-btn').querySelector('span');
+      targetCard = e.target.parentElement.parentElement.querySelector('.attachment-btn span');
       modal.classList.add('show');
     });
   })
 
+  // Close modal 
   modal.addEventListener('click', e => {
     if (e.target.classList.contains('modal')) {
       modal.classList.remove('show');
     }
   })
 
-  const form = document.getElementById("uploadForm");
-
+  // Upload files
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const attachments = form.attachments.files;
@@ -37,6 +40,7 @@
         if (data.status === 'success') {
           targetCard.innerText = targetCard.innerText * 1 + data.filenames.length;
           const fileList = document.getElementById("fileList");
+          fileList.innerHTML = ''
           data.filenames.forEach(function(filename) {
             const listItem = document.createElement("li");
             listItem.textContent = filename;
@@ -52,9 +56,3 @@
   })
 
 })();
-
-
-
-
-
-console.log('Hello Developer!!');
