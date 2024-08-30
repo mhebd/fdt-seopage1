@@ -3,7 +3,7 @@ Task for Frontend Developer from "SEOPage1"
 
 # How to run this server.
 
-A brief description of this server.
+A brief description of this server:
 
 ## Prerequisites
 
